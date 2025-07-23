@@ -38,5 +38,14 @@
 
 - Evitar la mutación directa de los datos permite mantener intactas las versiones previas de los datos y reutilizarlas más adelante.
 
-- De forma predeterminada, todos los componentes secundarios se vuelven a renderizar automáticamente cuando cambias el estado de un componente principal. Esto incluye incluso los componentes secundarios que no se vieron afectados por el cambio.
+- De forma predeterminada, todos los componentes secundarios se vuelven a renderizar automáticamente cuando se cambia el estado de un componente principal. Esto incluye incluso en los componentes secundarios que no se vieron afectados por el cambio.
+
 - Aunque el usuario no nota la renderización en sí misma (¡no debes tratar de evitarla de forma activa!), es posible que desees omitir la renderización de una parte del árbol que claramente no se vio afectada por razones de rendimiento. La inmutabilidad hace que sea muy barato para los componentes comparar si sus datos han cambiado o no.
+
+- `key` es una propiedad especial y reservada en React que se usa como identificador de cada componente para decidir que componentes actualizar.
+
+- Se recomienda asignar `keys` adecuadas cada vez que se cran listas dinámicas.
+
+- Si no se especifica ninguna `key`, React informará un error y utilizará el índice de matriz como `key` de forma predeterminada. El uso del índice de la matriz como `key` es problemático cuando se intenta reordenar los elementos de una lista o al insertar/eliminar elementos de la lista. Pasar explícitamente `key={i}` silencia el error pero tiene los mismos problemas que los índices de matriz y no se recomienda en la mayoría de los casos.
+
+Las `keys` no necesitan ser globalmente únicas; solo necesitan ser únicas entre los componentes y sus hermanos.
