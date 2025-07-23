@@ -48,4 +48,4 @@
 
 - Si no se especifica ninguna `key`, React informará un error y utilizará el índice de matriz como `key` de forma predeterminada. El uso del índice de la matriz como `key` es problemático cuando se intenta reordenar los elementos de una lista o al insertar/eliminar elementos de la lista. Pasar explícitamente `key={i}` silencia el error pero tiene los mismos problemas que los índices de matriz y no se recomienda en la mayoría de los casos.
 
-Las `keys` no necesitan ser globalmente únicas; solo necesitan ser únicas entre los componentes y sus hermanos.
+- Las `keys` no necesitan ser globalmente únicas; solo necesitan ser únicas entre los componentes y sus hermanos.
