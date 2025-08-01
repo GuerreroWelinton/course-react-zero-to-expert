@@ -1,4 +1,4 @@
-import { getHeroeById } from './bases/08-imp-exp';
+import { getHeroeById } from './08-imp-exp';
 
 // * Las promesas se ejecutan en la pila de trabajo de JS
 // * Los resultados de las promesas se ejecutan una vez que termina todo lo síncrono
