@@ -3,8 +3,6 @@
 Mientras sigo mi curso en video, quiero que mis commits sean claros y fáciles de identificar.  
 Por eso decidí crear una convención simple usando alias en Git, que me ayuda a saber si estaba **siguiendo al profe**, **haciendo mis propias prácticas**, **dejando notas rápidas** o **cambiando la estructura del proyecto**.
 
-Con esto, evito commits genéricos como “update” o “fix” y mi historial queda mucho más ordenado.
-
 ---
 
 ## 🚀 Alias configurados
