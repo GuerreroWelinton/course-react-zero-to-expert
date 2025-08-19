@@ -1,79 +1,69 @@
-# Convención de Commits para mi Curso
+# React + TypeScript + Vite
 
-Mientras sigo mi curso en video, quiero que mis commits sean claros y fáciles de identificar.  
-Por eso decidí crear una convención simple usando alias en Git, que me ayuda a saber si estaba **siguiendo al profe**, **haciendo mis propias prácticas**, **dejando notas rápidas** o **cambiando la estructura del proyecto**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Con esto, evito commits genéricos como “update” o “fix” y mi historial queda mucho más ordenado.
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Alias configurados
+## Expanding the ESLint configuration
 
-Estos alias se configuran una sola vez y luego puedo usarlos en cualquier repositorio.  
-Los comandos crean mensajes de commit con un formato uniforme, y además el texto final es opcional.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```bash
-# Cuando estoy haciendo mi propia práctica
-git config --global alias.practice '!f() { if [ -z "$3" ]; then git commit -m "practice - section $1, chapter $2"; else git commit -m "practice - section $1, chapter $2 - $3"; fi; }; f'
+```js
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-# Cuando sigo lo que hace el profe en el video
-git config --global alias.video '!f() { if [ -z "$3" ]; then git commit -m "video - section $1, chapter $2"; else git commit -m "video - section $1, chapter $2 - $3"; fi; }; f'
+      // Remove tseslint.configs.recommended and replace with this
+      ...tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      ...tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      ...tseslint.configs.stylisticTypeChecked,
 
-# Cuando quiero dejar notas rápidas relacionadas al curso
-git config --global alias.note '!f() { if [ -z "$1" ]; then git commit -m "note"; else git commit -m "note - $*"; fi; }; f'
-
-# Cuando hago cambios de estructura en el proyecto
-git config --global alias.structure '!f() { if [ -z "$1" ]; then git commit -m "structure"; else git commit -m "structure - $*"; fi; }; f'
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+]);
 ```
 
----
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## 🛠 Cómo usarlos
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x';
+import reactDom from 'eslint-plugin-react-dom';
 
-1. Primero agrego los cambios como siempre:
-
-```bash
-git add .
-```
-
-2. Luego uso el alias que corresponda:
-
-### ✅ Para prácticas
-
-```bash
-git practice 5 8 "arrays"
-# => practice - section 5, chapter 8 - arrays
-
-git practice 5 8
-# => practice - section 5, chapter 8
-```
-
-### ✅ Para cuando sigo el video
-
-```bash
-git video 4 2 "setup project"
-# => video - section 4, chapter 2 - setup project
-
-git video 4 2
-# => video - section 4, chapter 2
-```
-
-### ✅ Para notas rápidas
-
-```bash
-git note "revisar este ejemplo mañana"
-# => note - revisar este ejemplo mañana
-
-git note
-# => note
-```
-
-### ✅ Para cambios de estructura
-
-```bash
-git structure "reorganizar carpetas del módulo 3"
-# => structure - reorganizar carpetas del módulo 3
-
-git structure
-# => structure
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+]);
 ```
