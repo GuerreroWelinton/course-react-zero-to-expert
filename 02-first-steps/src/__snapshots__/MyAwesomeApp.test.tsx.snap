@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`MyAwesomeApp > should match snapshoot 1`] = `
+exports[`MyAwesomeApp > should match snapshot 1`] = `
 <div>
   <div
     data-testid="div-app"
@@ -43,48 +43,7 @@ exports[`MyAwesomeApp > should match snapshoot 1`] = `
 </div>
 `;
 
-exports[`MyAwesomeApp > should match snapshoot 2`] = `
-<div
-  data-testid="div-app"
->
-  <h1
-    data-testid="first-name-title"
-  >
-     
-    Welinton
-     
-  </h1>
-  <h3>
-     
-    Guerrero
-     
-  </h3>
-  <p>
-    4
-  </p>
-  <p
-    class="mi-clase-favorita"
-  >
-     
-    Fornite, Smite, Minecraft, Halo
-     
-  </p>
-  <h1>
-     
-    Inactive
-     
-  </h1>
-  <p
-    style="background-color: rgb(12, 90, 2); border-radius: 8px; padding: 10px;"
-  >
-     
-    {"zipCode":"ABC","country":"Ecuador"}
-     
-  </p>
-</div>
-`;
-
-exports[`MyAwesomeApp > should match support 1`] = `
+exports[`MyAwesomeApp > should match snapshot 2`] = `
 <div
   data-testid="div-app"
 >
