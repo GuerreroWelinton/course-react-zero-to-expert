@@ -1,5 +1,5 @@
-import { describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { describe, expect, test } from 'vitest';
 import { MyAwesomeApp } from './MyAwesomeApp';
 
 describe('MyAwesomeApp', () => {
@@ -29,6 +29,16 @@ describe('MyAwesomeApp', () => {
     const h1 = screen.getByTestId('first-name-title');
     expect(h1.innerHTML).toContain('Welinton');
   });
+
+  test('should match snapshoot', () => {
+    const { container } = render(<MyAwesomeApp />);
+    expect(container).toMatchSnapshot();
+  });
+
+  test('should match snapshoot', () => {
+    render(<MyAwesomeApp />);
+    expect(screen.getByTestId('div-app')).toMatchSnapshot();
+  });
 });
 
 // Se recomienda solo usar { container } con un render inicial y para estados sin manipulaciones sin eventos
@@ -37,3 +47,6 @@ describe('MyAwesomeApp', () => {
 // Se pueden poner tantos expect dentro del test como se necesiten
 // El screen.debug() me permite ver los datos actualizados si surgió un cambio en el componente
 // No se recomienda hacerlo con screen.getByTestId('id')
+// Los snapshots son fotografías de un componente renderizado en cierto momento, se utliza cuando se quiere verificar
+// que la estructura física del componente creado es exactamente igual a la usada previamente
+// Si un componente no recibe muchas modificaciones es mejor no usar snapshoot
