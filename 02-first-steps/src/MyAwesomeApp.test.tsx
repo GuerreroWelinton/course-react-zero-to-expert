@@ -49,4 +49,4 @@ describe('MyAwesomeApp', () => {
 // No se recomienda hacerlo con screen.getByTestId('id')
 // Los snapshots son fotografías de un componente renderizado en cierto momento, se utliza cuando se quiere verificar
 // que la estructura física del componente creado es exactamente igual a la usada previamente
-// Si un componente no recibe muchas modificaciones es mejor no usar snapshot
+// Si un componente recibe muchas modificaciones es mejor no usar snapshot

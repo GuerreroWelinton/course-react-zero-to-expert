@@ -1,0 +1,30 @@
+.accordion {
+  padding: 0.375rem;
+  border-radius: 0.375rem;
+  background-color: #66e2b8;
+}
+
+.question {
+  color: #323234;
+  font-size: 1rem;
+}
+
+.content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.6s linear;
+}
+
+.open {
+  max-height: 100px;
+}
+
+.close {
+  max-height: 0;
+}
+
+.answer {
+  margin: 0;
+  color: #57555a;
+  font-size: 0.75rem;
+}

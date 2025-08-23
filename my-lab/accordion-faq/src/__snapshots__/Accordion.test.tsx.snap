@@ -1,0 +1,74 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Accordion > should match snapshot 1`] = `
+<div>
+  <div
+    class="_container_b8a185"
+    data-testid="accordion"
+  >
+    <h1>
+      PREGUNTAS FRECUENTES
+    </h1>
+    <div
+      class="_accordion_38baf4"
+    >
+      <h1
+        class="_question_38baf4"
+      >
+        1
+        . 
+        ¿Qué es React?
+      </h1>
+      <div
+        class="_content_38baf4 _close_38baf4"
+      >
+        <p
+          class="_answer_38baf4"
+        >
+          React es una biblioteca de JavaScript para construir interfaces de usuario. Te permite crear componentes reutilizables que gestionan su propio estado.
+        </p>
+      </div>
+    </div>
+    <div
+      class="_accordion_38baf4"
+    >
+      <h1
+        class="_question_38baf4"
+      >
+        2
+        . 
+        ¿Qué es el JSX?
+      </h1>
+      <div
+        class="_content_38baf4 _close_38baf4"
+      >
+        <p
+          class="_answer_38baf4"
+        >
+          JSX es una extensión de la sintaxis de JavaScript que se parece a HTML. Permite escribir la estructura de tus componentes de una manera más declarativa y familiar.
+        </p>
+      </div>
+    </div>
+    <div
+      class="_accordion_38baf4"
+    >
+      <h1
+        class="_question_38baf4"
+      >
+        3
+        . 
+        ¿Qué hace el hook \`useState\`?
+      </h1>
+      <div
+        class="_content_38baf4 _close_38baf4"
+      >
+        <p
+          class="_answer_38baf4"
+        >
+          El hook \`useState\` permite a los componentes funcionales tener su propio estado. Devuelve un valor de estado y una función para actualizarlo, provocando un nuevo renderizado del componente.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
