@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AccordionItem > should match the snapshot 1`] = `
+<div>
+  <div
+    class="_accordion_38baf4"
+    style="background-color: rgb(172, 199, 84);"
+  >
+    <h1
+      class="_question_38baf4"
+    >
+      123
+      . 
+      Esta es la pregunta número 1
+    </h1>
+    <div
+      class="_content_38baf4 _close_38baf4"
+    >
+      <p
+        class="_answer_38baf4"
+      >
+        Esta es la respuesta a la pregunta número 1
+      </p>
+    </div>
+  </div>
+</div>
+`;

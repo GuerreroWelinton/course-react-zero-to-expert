@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import type { Question } from '../Accordion.interface';
+import type { FAQItem } from '../Accordion.interface';
 import styles from './AccordionItem.module.css';
 
-const AccordionItem = ({ id, content, title }: Question) => {
+const AccordionItem = ({ id, answer, question, customBgColor }: FAQItem) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClick = () => {
@@ -12,12 +12,12 @@ const AccordionItem = ({ id, content, title }: Question) => {
   const className = `${styles.content} ${isOpen ? styles.open : styles.close}`;
   return (
     <>
-      <div className={styles.accordion} onClick={onClick}>
+      <div className={styles.accordion} style={{ backgroundColor: customBgColor }} onClick={onClick}>
         <h1 className={styles.question}>
-          {id}. {title}
+          {id}. {question}
         </h1>
         <div className={className}>
-          <p className={styles.answer}>{content}</p>
+          <p className={styles.answer}>{answer}</p>
         </div>
       </div>
     </>

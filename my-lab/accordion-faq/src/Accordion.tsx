@@ -7,8 +7,8 @@ const Accordion = () => {
   return (
     <div data-testid="accordion" className={styles.container}>
       <h1>PREGUNTAS FRECUENTES</h1>
-      {questions.map(({ id, content, title }) => (
-        <AccordionItem key={id} id={id} content={content} title={title} />
+      {questions.map((item) => (
+        <AccordionItem key={item.id} {...item} />
       ))}
     </div>
   );

@@ -1,5 +1,6 @@
-export interface Question {
+export interface FAQItem {
   id: number;
-  title: string;
-  content: string;
+  question: string;
+  answer: string;
+  customBgColor?: string;
 }
