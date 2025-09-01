@@ -12,10 +12,10 @@ Los comandos crean mensajes de commit con un formato uniforme, y además el text
 
 ```bash
 # Cuando estoy haciendo mi propia práctica
-git config --global alias.practice '!f() { if [ -z "$3" ]; then git commit -m "practice - section $1, chapter $2"; else git commit -m "practice - section $1, chapter $2 - $3"; fi; }; f'
+git config --global alias.practice '!f() { if [ -z "$3" ]; then echo "Error: Todos los parámetros son obligatorios (mensaje, sección, capítulo)"; else git commit -m "practice - section $2, chapter $3 - $1"; fi; }; f'
 
 # Cuando sigo lo que hace el profe en el video
-git config --global alias.video '!f() { if [ -z "$3" ]; then git commit -m "video - section $1, chapter $2"; else git commit -m "video - section $1, chapter $2 - $3"; fi; }; f'
+git config --global alias.video '!f() { if [ -z "$3" ]; then echo "Error: Todos los parámetros son obligatorios (mensaje, sección, capítulo)"; else git commit -m "video - section $2, chapter $3 - $1"; fi; }; f'
 
 # Cuando quiero dejar notas rápidas relacionadas al curso
 git config --global alias.note '!f() { if [ -z "$1" ]; then git commit -m "note"; else git commit -m "note - $*"; fi; }; f'
@@ -39,21 +39,21 @@ git add .
 ### ✅ Para prácticas
 
 ```bash
-git practice 5 8 "arrays"
+git practice "arrays" 5 8
 # => practice - section 5, chapter 8 - arrays
 
-git practice 5 8
-# => practice - section 5, chapter 8
+git practice "working with objects" 3 12
+# => practice - section 3, chapter 12 - working with objects
 ```
 
 ### ✅ Para cuando sigo el video
 
 ```bash
-git video 4 2 "setup project"
+git video "setup project" 4 2
 # => video - section 4, chapter 2 - setup project
 
-git video 4 2
-# => video - section 4, chapter 2
+git video "installing dependencies" 2 5
+# => video - section 2, chapter 5 - installing dependencies
 ```
 
 ### ✅ Para notas rápidas
