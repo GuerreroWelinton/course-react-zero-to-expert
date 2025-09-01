@@ -21,7 +21,7 @@ export const ItemCounter = ({ productName, quantity = 1 }: Props) => {
 
   return (
     <section className={styles.itemRow}>
-      <span className={styles['item-text']} style={{ color: count > 0 ? 'green' : 'black' }}>
+      <span className={styles['item-text']} style={{ color: count > 0 ? 'black' : 'red' }}>
         {productName}
       </span>
       <button onClick={handleAdd}>+1</button>

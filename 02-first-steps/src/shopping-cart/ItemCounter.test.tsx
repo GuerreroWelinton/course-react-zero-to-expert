@@ -58,6 +58,28 @@ describe('ItemCounter', () => {
 
     expect(screen.getByText('0')).toBeDefined();
   });
+
+  test('should change to red color when count is 0', () => {
+    const productName: string = 'Xbox Series';
+    const quantity: number = 0;
+
+    render(<ItemCounter productName={productName} quantity={quantity} />);
+
+    const itemText = screen.getByText(productName);
+
+    expect(itemText.style.color).toBe('red');
+  });
+
+  test('should change to black color when count is greater than 0', () => {
+    const productName: string = 'Xbox Series';
+    const quantity: number = 13;
+
+    render(<ItemCounter productName={productName} quantity={quantity} />);
+
+    const itemText = screen.getByText(productName);
+
+    expect(itemText.style.color).toBe('black');
+  });
 });
 
 // Cuando se usa fireEvent va a ejecutar las funciones que estén vinculadas a mis eventos
