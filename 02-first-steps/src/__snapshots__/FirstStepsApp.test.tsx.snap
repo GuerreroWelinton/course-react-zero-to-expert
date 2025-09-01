@@ -1,0 +1,85 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FirstStepsApp > should match snapshot 1`] = `
+<div>
+  <h1>
+    Shopping Cart
+  </h1>
+  <section
+    class="_itemRow_8b32a2"
+  >
+    <span
+      class="_item-text_8b32a2"
+      style="color: black;"
+    >
+      PlayStation 4
+    </span>
+    <button>
+      +1
+    </button>
+    <span>
+      2
+    </span>
+    <button>
+      -1
+    </button>
+  </section>
+  <section
+    class="_itemRow_8b32a2"
+  >
+    <span
+      class="_item-text_8b32a2"
+      style="color: black;"
+    >
+      XboxSeries
+    </span>
+    <button>
+      +1
+    </button>
+    <span>
+      3
+    </span>
+    <button>
+      -1
+    </button>
+  </section>
+  <section
+    class="_itemRow_8b32a2"
+  >
+    <span
+      class="_item-text_8b32a2"
+      style="color: black;"
+    >
+      Nintendo Switch
+    </span>
+    <button>
+      +1
+    </button>
+    <span>
+      5
+    </span>
+    <button>
+      -1
+    </button>
+  </section>
+  <section
+    class="_itemRow_8b32a2"
+  >
+    <span
+      class="_item-text_8b32a2"
+      style="color: black;"
+    >
+      GTA San Andrea
+    </span>
+    <button>
+      +1
+    </button>
+    <span>
+      7
+    </span>
+    <button>
+      -1
+    </button>
+  </section>
+</div>
+`;
