@@ -3,7 +3,7 @@ import type { FAQItem } from '../Accordion.interface';
 import styles from './AccordionItem.module.css';
 import { DEFAULT_BG_COLOR } from '../Accordion.constant';
 
-const AccordionItem = ({ id, question, answer, customBgColor = DEFAULT_BG_COLOR }: FAQItem) => {
+export const AccordionItem = ({ id, question, answer, customBgColor = DEFAULT_BG_COLOR }: FAQItem) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClick = () => {
@@ -29,5 +29,3 @@ const AccordionItem = ({ id, question, answer, customBgColor = DEFAULT_BG_COLOR 
     </>
   );
 };
-
-export default AccordionItem;

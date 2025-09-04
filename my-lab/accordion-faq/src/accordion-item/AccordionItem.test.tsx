@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 import { DEFAULT_BG_COLOR, TEST_QUESTION } from '../Accordion.constant';
-import AccordionItem from './AccordionItem';
+import { AccordionItem } from './AccordionItem';
 
 describe('AccordionItem', () => {
   test('should match the snapshot', () => {
