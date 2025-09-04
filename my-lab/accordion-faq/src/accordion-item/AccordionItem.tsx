@@ -12,7 +12,12 @@ const AccordionItem = ({ id, answer, question, customBgColor }: FAQItem) => {
   const className = `${styles.content} ${isOpen ? styles.open : styles.close}`;
   return (
     <>
-      <div className={styles.accordion} style={{ backgroundColor: customBgColor }} onClick={onClick}>
+      <div
+        data-testid="accordionItem"
+        className={styles.accordion}
+        style={{ backgroundColor: customBgColor }}
+        onClick={onClick}
+      >
         <h1 className={styles.question}>
           {id}. {question}
         </h1>

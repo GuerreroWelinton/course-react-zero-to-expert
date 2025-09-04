@@ -4,6 +4,7 @@ exports[`AccordionItem > should match the snapshot 1`] = `
 <div>
   <div
     class="_accordion_38baf4"
+    data-testid="accordionItem"
     style="background-color: rgb(172, 199, 84);"
   >
     <h1

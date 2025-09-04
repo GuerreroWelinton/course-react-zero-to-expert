@@ -11,6 +11,7 @@ exports[`Accordion > should match snapshot 1`] = `
     </h1>
     <div
       class="_accordion_38baf4"
+      data-testid="accordionItem"
     >
       <h1
         class="_question_38baf4"
@@ -31,6 +32,7 @@ exports[`Accordion > should match snapshot 1`] = `
     </div>
     <div
       class="_accordion_38baf4"
+      data-testid="accordionItem"
     >
       <h1
         class="_question_38baf4"
@@ -51,6 +53,7 @@ exports[`Accordion > should match snapshot 1`] = `
     </div>
     <div
       class="_accordion_38baf4"
+      data-testid="accordionItem"
       style="background-color: rgb(172, 199, 84);"
     >
       <h1
