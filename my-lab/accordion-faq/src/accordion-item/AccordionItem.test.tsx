@@ -1,39 +1,37 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
+import { DEFAULT_BG_COLOR, TEST_QUESTION } from '../Accordion.constant';
 import AccordionItem from './AccordionItem';
-import type { FAQItem } from '../Accordion.interface';
-
-const faqItem: FAQItem = {
-  id: 123,
-  question: 'Esta es la pregunta número 1',
-  answer: 'Esta es la respuesta a la pregunta número 1',
-  customBgColor: 'rgb(172, 199, 84)',
-};
 
 describe('AccordionItem', () => {
-  test('should render with default values', () => {
-    render(<AccordionItem {...faqItem} />);
-
-    expect(screen.getByText(faqItem.answer)).toBeDefined();
-  });
-
   test('should match the snapshot', () => {
-    const { container } = render(<AccordionItem {...faqItem} />);
+    const { container } = render(<AccordionItem {...TEST_QUESTION} />);
 
     expect(container).toMatchSnapshot();
   });
 
-  test('should render with custom background color', () => {
-    render(<AccordionItem {...faqItem} />);
+  test('should render with default background color', () => {
+    render(<AccordionItem {...TEST_QUESTION} />);
 
     const accordionItem = screen.getByTestId('accordionItem');
-    const accordionItemBgColor = accordionItem.style.backgroundColor;
+    const accordionItemBg = accordionItem.style.background;
 
-    expect(accordionItemBgColor).toBe(faqItem.customBgColor);
+    expect(accordionItemBg).toBe(DEFAULT_BG_COLOR);
+  });
+
+  test('should render with custom background color', () => {
+    const customBgColor = 'rgb(172, 199, 84)';
+
+    render(<AccordionItem {...TEST_QUESTION} customBgColor={customBgColor} />);
+
+    const accordionItem = screen.getByTestId('accordionItem');
+    const accordionItemBg = accordionItem.style.background;
+
+    expect(accordionItemBg).toBe(customBgColor);
   });
 
   test('should change the "close" class to "open" when container element is pressed', () => {
-    render(<AccordionItem {...faqItem} />);
+    render(<AccordionItem {...TEST_QUESTION} />);
 
     const accordionItem = screen.getByTestId('accordionItem');
     fireEvent.click(accordionItem);

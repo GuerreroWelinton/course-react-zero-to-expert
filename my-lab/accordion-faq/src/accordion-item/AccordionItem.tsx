@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import type { FAQItem } from '../Accordion.interface';
 import styles from './AccordionItem.module.css';
+import { DEFAULT_BG_COLOR } from '../Accordion.constant';
 
-const AccordionItem = ({ id, answer, question, customBgColor }: FAQItem) => {
+const AccordionItem = ({ id, question, answer, customBgColor = DEFAULT_BG_COLOR }: FAQItem) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClick = () => {
@@ -15,13 +16,13 @@ const AccordionItem = ({ id, answer, question, customBgColor }: FAQItem) => {
       <div
         data-testid="accordionItem"
         className={styles.accordion}
-        style={{ backgroundColor: customBgColor }}
+        style={{ background: customBgColor }}
         onClick={onClick}
       >
         <h1 className={styles.question}>
           {id}. {question}
         </h1>
-        <div data-testId="answer" className={className}>
+        <div data-testid="answer" className={className}>
           <p className={styles.answer}>{answer}</p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import type { FAQItem } from './Accordion.interface';
 
-export const questions: FAQItem[] = [
+export const QUESTIONS: FAQItem[] = [
   {
     id: 1,
     question: '¿Qué es React?',
@@ -21,3 +21,11 @@ export const questions: FAQItem[] = [
     customBgColor: '#acc754',
   },
 ];
+
+export const TEST_QUESTION: FAQItem = {
+  id: 123,
+  question: 'Esta es la pregunta número 1',
+  answer: 'Esta es la respuesta a la pregunta número 1',
+};
+
+export const DEFAULT_BG_COLOR = 'rgb(102, 226, 184)';
