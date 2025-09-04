@@ -8,7 +8,7 @@ Por eso decidí crear una convención simple usando alias en Git, que me ayuda a
 ## 🚀 Alias configurados
 
 Estos alias se configuran una sola vez y luego puedo usarlos en cualquier repositorio.  
-Los comandos crean mensajes de commit con un formato uniforme, y además el texto final es opcional.
+Los comandos crean mensajes de commit con un formato uniforme.
 
 ```bash
 # Cuando estoy haciendo mi propia práctica
