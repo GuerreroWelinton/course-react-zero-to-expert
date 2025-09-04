@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 import AccordionItem from './AccordionItem';
 import type { FAQItem } from '../Accordion.interface';
@@ -30,5 +30,17 @@ describe('AccordionItem', () => {
     const accordionItemBgColor = accordionItem.style.backgroundColor;
 
     expect(accordionItemBgColor).toBe(faqItem.customBgColor);
+  });
+
+  test('should change the "close" class to "open" when container element is pressed', () => {
+    render(<AccordionItem {...faqItem} />);
+
+    const accordionItem = screen.getByTestId('accordionItem');
+    fireEvent.click(accordionItem);
+
+    const answer = screen.getByTestId('answer');
+    const accordionItemClassName = answer.className;
+
+    expect(accordionItemClassName).toContain('open');
   });
 });

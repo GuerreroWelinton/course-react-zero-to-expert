@@ -21,7 +21,7 @@ const AccordionItem = ({ id, answer, question, customBgColor }: FAQItem) => {
         <h1 className={styles.question}>
           {id}. {question}
         </h1>
-        <div className={className}>
+        <div data-testId="answer" className={className}>
           <p className={styles.answer}>{answer}</p>
         </div>
       </div>

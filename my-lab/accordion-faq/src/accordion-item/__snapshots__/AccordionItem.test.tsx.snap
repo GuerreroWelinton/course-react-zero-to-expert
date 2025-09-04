@@ -16,6 +16,7 @@ exports[`AccordionItem > should match the snapshot 1`] = `
     </h1>
     <div
       class="_content_38baf4 _close_38baf4"
+      data-testid="answer"
     >
       <p
         class="_answer_38baf4"
