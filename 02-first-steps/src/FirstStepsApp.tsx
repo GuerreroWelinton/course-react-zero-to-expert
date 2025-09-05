@@ -4,15 +4,15 @@ import { ItemCounter } from './shopping-cart/ItemCounter';
 
 interface ItemInCart {
   id: number;
-  itemName: string;
+  productName: string;
   quantity: number;
 }
 
 const itemsInCart: ItemInCart[] = [
-  { id: 1, itemName: 'PlayStation 4', quantity: 2 },
-  { id: 2, itemName: 'XboxSeries', quantity: 3 },
-  { id: 3, itemName: 'Nintendo Switch', quantity: 5 },
-  { id: 4, itemName: 'GTA San Andrea', quantity: 7 },
+  { id: 1, productName: 'PlayStation 4', quantity: 2 },
+  { id: 2, productName: 'XboxSeries', quantity: 3 },
+  { id: 3, productName: 'Nintendo Switch', quantity: 5 },
+  { id: 4, productName: 'GTA San Andrea', quantity: 7 },
 ];
 
 export function FirstStepsApp() {
@@ -20,8 +20,8 @@ export function FirstStepsApp() {
     <>
       <h1>Shopping Cart</h1>
 
-      {itemsInCart.map(({ id, itemName, quantity }) => (
-        <ItemCounter key={id} productName={itemName} quantity={quantity} />
+      {itemsInCart.map(({ id, productName, quantity }) => (
+        <ItemCounter key={id} name={productName} quantity={quantity} />
       ))}
     </>
   );

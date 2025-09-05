@@ -6,7 +6,7 @@ describe('ItemCounter', () => {
   test('should render with default values', () => {
     const productName = 'Test item';
 
-    render(<ItemCounter productName={productName} />);
+    render(<ItemCounter name={productName} />);
 
     // expect(screen.getByText('Test item')).toBeDefined();
     expect(screen.getByText(productName)).not.toBeNull();
@@ -16,7 +16,7 @@ describe('ItemCounter', () => {
     const productName: string = 'Test item';
     const quantity: number = 2;
 
-    render(<ItemCounter productName={productName} quantity={quantity} />);
+    render(<ItemCounter name={productName} quantity={quantity} />);
 
     expect(screen.getByText(quantity)).toBeDefined();
   });
@@ -24,7 +24,7 @@ describe('ItemCounter', () => {
   test('should increase count when +1 button is pressed', () => {
     const productName: string = 'Play Station 5';
 
-    render(<ItemCounter productName={productName} />);
+    render(<ItemCounter name={productName} />);
 
     const [buttonAdd] = screen.getAllByRole('button');
 
@@ -37,7 +37,7 @@ describe('ItemCounter', () => {
     const productName: string = 'Xbox Series';
     const quantity: number = 5;
 
-    render(<ItemCounter productName={productName} quantity={quantity} />);
+    render(<ItemCounter name={productName} quantity={quantity} />);
 
     const [, buttonSubtract] = screen.getAllByRole('button');
 
@@ -50,7 +50,7 @@ describe('ItemCounter', () => {
     const productName: string = 'Xbox Series';
     const quantity: number = 0;
 
-    render(<ItemCounter productName={productName} quantity={quantity} />);
+    render(<ItemCounter name={productName} quantity={quantity} />);
 
     const [, buttonSubtract] = screen.getAllByRole('button');
 
@@ -63,7 +63,7 @@ describe('ItemCounter', () => {
     const productName: string = 'Xbox Series';
     const quantity: number = 0;
 
-    render(<ItemCounter productName={productName} quantity={quantity} />);
+    render(<ItemCounter name={productName} quantity={quantity} />);
 
     const itemText = screen.getByText(productName);
 
@@ -74,7 +74,7 @@ describe('ItemCounter', () => {
     const productName: string = 'Xbox Series';
     const quantity: number = 13;
 
-    render(<ItemCounter productName={productName} quantity={quantity} />);
+    render(<ItemCounter name={productName} quantity={quantity} />);
 
     const itemText = screen.getByText(productName);
 
