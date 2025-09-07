@@ -1,15 +1,20 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, test, vi } from 'vitest';
+import { afterEach, describe, expect, test, vi } from 'vitest';
 import { Accordion } from './Accordion';
 import { QUESTIONS } from './Accordion.constant';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const mockComponent = vi.fn((_props: unknown) => <div data-testid="AccordionItem"></div>);
+
 vi.mock('./accordion-item/AccordionItem', () => ({
-  AccordionItem: () => <div data-testid="AccordionItem"></div>,
+  AccordionItem: (props: unknown) => mockComponent(props),
   // * Usarlo de la manera de abajo si exporto por defecto el componente
   // default: () => <div data-testid="AccordionItem"></div>,
 }));
 
 describe('Accordion', () => {
+  afterEach(() => vi.clearAllMocks());
+
   test('should render question title and content', () => {
     const { container } = render(<Accordion />);
 
@@ -37,5 +42,13 @@ describe('Accordion', () => {
     const accordionItems = screen.getAllByTestId('AccordionItem');
 
     expect(accordionItems.length).toBe(QUESTIONS.length);
+  });
+
+  test('should render AccordionItem with the correct props', () => {
+    render(<Accordion />);
+
+    expect(mockComponent).toHaveBeenCalledTimes(QUESTIONS.length);
+
+    QUESTIONS.forEach((item) => expect(mockComponent).toHaveBeenCalledWith(item));
   });
 });
