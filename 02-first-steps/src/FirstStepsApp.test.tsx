@@ -46,5 +46,7 @@ describe('FirstStepsApp', () => {
   });
 });
 
+// Puedo recibir tal cual las props que acepta mi componente en el mockComponent
+
 // Debo tener en cuenta que cada test que renderiza FirstStepsApp a su vez manda renderizar a ItemCounter
 // la cantidad de veces del array itemsInCart(4)
