@@ -4,9 +4,9 @@ interface Props {
 
 export const SearchBar = ({ placeholder = 'Buscar' }: Props) => {
   return (
-    <div className="search-container">
-      <input type="text" placeholder={placeholder} />
-      <button>Buscar</button>
+    <div className='search-container'>
+      <input id='search-input' type='text' placeholder={placeholder} />
+      <button type='button'>Buscar</button>
     </div>
   );
 };

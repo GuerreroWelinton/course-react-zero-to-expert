@@ -1,0 +1,30 @@
+# Prettier ignore patterns
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.env*
+*.min.js
+*.min.css
+
+# Generated files
+*.log
+*.tgz
+*.tar.gz
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

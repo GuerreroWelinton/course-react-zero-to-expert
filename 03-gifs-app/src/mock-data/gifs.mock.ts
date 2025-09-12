@@ -1,4 +1,4 @@
-export interface Gif {
+export interface GifResource {
   id: string;
   title: string;
   url: string;
@@ -6,7 +6,7 @@ export interface Gif {
   height: number;
 }
 
-export const mockGifs: Gif[] = [
+export const mockGifs: GifResource[] = [
   {
     id: '1',
     title: "Superman's Cake",
