@@ -8,14 +8,27 @@ import { SearchBar } from '@/shared/components/SearchBar';
 import { useState } from 'react';
 
 export const GifsApp = () => {
-  const [previousTerms, setPreviousTerms] = useState(['Goku', 'Vegeta']);
+  const [previousTerms, setPreviousTerms] = useState(['goku', 'vegeta']);
 
   const handleTermClicked = (term: string) => {
     console.log({ term });
   };
 
-  const handleSearch = (query: string) => {
-    console.log({ query });
+  const handleSearch = (query: string = '') => {
+    const formattedQuery = query.trim().toLowerCase();
+
+    if (formattedQuery === '') return;
+
+    const queryExists = previousTerms.includes(formattedQuery);
+
+    if (queryExists) return;
+
+    setPreviousTerms([formattedQuery, ...previousTerms].slice(0, 8));
+
+    // setPreviousTerms(prev => {
+    //   if (prev.includes(formattedQuery)) return prev;
+    //   return [formattedQuery, ...prev].slice(0, 8);
+    // });
   };
 
   return (
