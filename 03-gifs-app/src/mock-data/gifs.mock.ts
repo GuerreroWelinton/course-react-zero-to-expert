@@ -1,12 +1,6 @@
-export interface GifResource {
-  id: string;
-  title: string;
-  url: string;
-  width: number;
-  height: number;
-}
+import type { Gif } from '@/gifs/interfaces/gifs.interface';
 
-export const mockGifs: GifResource[] = [
+export const mockGifs: Gif[] = [
   {
     id: '1',
     title: "Superman's Cake",

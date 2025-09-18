@@ -6,6 +6,7 @@ import { PreviousSearches } from '@/gifs/components/PreviousSearches';
 import { CustomHeader } from '@/shared/components/CustomHeader';
 import { SearchBar } from '@/shared/components/SearchBar';
 import { useState } from 'react';
+import { getGifsByQuery } from './gifs/actions/get-gifs-by-query.action';
 
 export const GifsApp = () => {
   const [previousTerms, setPreviousTerms] = useState(['goku', 'vegeta']);
@@ -14,14 +15,12 @@ export const GifsApp = () => {
     console.log({ term });
   };
 
-  const handleSearch = (query: string = '') => {
+  const handleSearch = async (query: string = '') => {
     const formattedQuery = query.trim().toLowerCase();
 
     if (formattedQuery === '') return;
 
-    const queryExists = previousTerms.includes(formattedQuery);
-
-    if (queryExists) return;
+    if (previousTerms.includes(formattedQuery)) return;
 
     setPreviousTerms([formattedQuery, ...previousTerms].slice(0, 8));
 
@@ -29,6 +28,9 @@ export const GifsApp = () => {
     //   if (prev.includes(formattedQuery)) return prev;
     //   return [formattedQuery, ...prev].slice(0, 8);
     // });
+
+    const gifs = await getGifsByQuery(query);
+    console.log(gifs);
   };
 
   return (
