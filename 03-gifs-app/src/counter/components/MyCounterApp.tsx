@@ -17,3 +17,7 @@ export const MyCounterApp = () => {
     </div>
   );
 };
+
+// No se debe hacer un hook con condiciones, no es recomendado.
+// Los hooks dependen de su posición.
+// Primero ordenar los useState y después los efectos.
