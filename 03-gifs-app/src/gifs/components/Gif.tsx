@@ -1,7 +1,7 @@
-import type { GifResource } from '@/mock-data/gifs.mock';
+import type { Gif } from '../interfaces/gifs.interface';
 
 interface Props {
-  gif: GifResource;
+  gif: Gif;
 }
 
 export const Gif = ({ gif }: Props) => {
