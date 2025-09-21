@@ -7,7 +7,7 @@ import { PreviousSearches } from '@/gifs/components/PreviousSearches';
 import { useGifs } from '@/gifs/hooks/useGifs';
 
 export const GifsApp = () => {
-  const { gifs, previousTerms, handleTermClicked, handleSearch } = useGifs();
+  const { gifs, previousTerms, handleSearch, handleTermClicked } = useGifs();
 
   return (
     <>
