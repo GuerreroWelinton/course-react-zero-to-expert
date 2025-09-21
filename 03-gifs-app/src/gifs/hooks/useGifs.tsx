@@ -1,18 +1,20 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { getGifsByQuery } from '@/gifs/actions/get-gifs-by-query.action';
 
 import type { Gif } from '@/gifs/interfaces/gifs.interface';
 
-const gifsCache: Record<string, Gif[]> = {};
+// const gifsCache: Record<string, Gif[]> = {};
 
 export const useGifs = () => {
   const [gifs, setGifs] = useState<Gif[]>([]);
   const [previousTerms, setPreviousTerms] = useState<string[]>([]);
 
+  const gifsCache = useRef<Record<string, Gif[]>>({});
+
   const handleTermClicked = async (term: string) => {
-    if (gifsCache[term]) {
-      setGifs(gifsCache[term]);
+    if (gifsCache.current[term]) {
+      setGifs(gifsCache.current[term]);
       return;
     }
 
@@ -21,18 +23,22 @@ export const useGifs = () => {
   };
 
   const handleSearch = async (query: string = '') => {
-    const formattedQuery = query.trim().toLowerCase();
+    const trimmedQuery = query.trim().toLowerCase();
 
-    if (formattedQuery.length === 0) return;
+    if (trimmedQuery.length === 0) return;
 
-    if (previousTerms.includes(formattedQuery)) return;
+    if (previousTerms.includes(trimmedQuery)) {
+      setGifs(gifsCache.current[query]);
+      return;
+    }
 
-    setPreviousTerms([formattedQuery, ...previousTerms].slice(0, 8));
+    setPreviousTerms([trimmedQuery, ...previousTerms].slice(0, 8));
 
     const gifs = await getGifsByQuery(query);
     setGifs(gifs);
 
-    gifsCache[query] = gifs;
+    gifsCache.current[query] = gifs;
+    console.log(gifsCache);
   };
 
   return {
