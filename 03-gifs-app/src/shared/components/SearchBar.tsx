@@ -20,7 +20,6 @@ export const SearchBar = ({ placeholder = 'Buscar', onQuery }: Props) => {
 
   const handleSearch = () => {
     onQuery(query);
-    // setQuery('');
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {

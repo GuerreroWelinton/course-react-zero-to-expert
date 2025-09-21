@@ -16,10 +16,7 @@ export const useCounter = (initialValue: number = 10) => {
   };
 
   return {
-    // Values
     counter,
-
-    // Methods / Actions
     handleAdd,
     handleSubtract,
     handleReset,
